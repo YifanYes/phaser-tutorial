@@ -5,8 +5,10 @@ import path from 'path'
 const app = express()
 const port = 3000
 
+app.use('/assets', express.static(path.join(__dirname, 'assets')))
+
 app.get('/', (req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, 'src/part1.html'))
+  res.sendFile(path.join(__dirname, 'index.html'))
 })
 
 app.listen(port, () => {
